@@ -13,13 +13,17 @@ app.get('/spamdetect', function (request, response) {
     var img_url = parsepar.parse(url.parse(request.url).query)["img"];
 
     var analyzer = require("./analyzer");
-    var text_on_img = analyzer.analyze(img_url);
+
+    var name = new Date().toISOString() + ".png";
+    //analyzer.downloader(img_url, name);
+
+    analyzer.analyze(img_url, name, response, text_of_post);
 
     index += 1;
     text_of_post = text_of_post.toLowerCase();
 
     console.log(index + " success " + find.spamdetect(text_of_post) + " " + text_of_post);
-    response.json({"status": 200, "verdict": find.spamdetect(text_of_post + text_on_img), "message": text_of_post, "message on img": text_on_img});
+
 
    // var saver = require("./saver")
     //saver.save(db, find.spamdetect(text_of_post), text_of_post, img_url);

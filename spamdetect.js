@@ -3,10 +3,12 @@ function spamdetect (text){
     var notspam_key = new Array ('pikabu', 'ингридиенты', 'рецепт', 'приготовление','подборк');
     var verdict = "NOT SPAM";
 
-    for (i = 0; i < spam_key.length; i++) {
-        if (text.indexOf(spam_key[i]) != -1) {
-            verdict = "SPAM";
-            break;
+    if (text.length > 0) {
+        for (i = 0; i < spam_key.length; i++) {
+            if (text.indexOf(spam_key[i]) != -1) {
+                verdict = "SPAM";
+                break;
+            }
         }
     }
 
