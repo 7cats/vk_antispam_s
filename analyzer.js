@@ -2,10 +2,6 @@ function analyze(img, name,  response, text_of_post) {
     tesseract(img, name, response, text_of_post);
 }
 
-function download_img(url, name) {
-
-}
-
 function tesseract(url, name, response, text_of_post) {
     var tesseract = require('node-tesseract');
     var find = require("./spamdetect");
@@ -34,14 +30,7 @@ function tesseract(url, name, response, text_of_post) {
             // return text;
         });
     })
-
-
-
-
-
-
 }
-
 
 exports.analyze = analyze;
 exports.downloader = download_img;
