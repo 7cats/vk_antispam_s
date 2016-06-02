@@ -1,1 +1,5 @@
-# vk_server_enterprise
+Cерверная часть антиспам системы для ВК
+
+Используется Node.js Express
+
+
